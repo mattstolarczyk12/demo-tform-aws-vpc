@@ -94,7 +94,7 @@ I defined this to be the output code as a convenience.
 Outputs: 
 
 - private_connection_string = ssh -i <namespace>-key.pem ec2-user@<private IP address> 
-  public_connection_string = ssh -i <namespace>-key.pem ec2-user@<public IP address> 
+- public_connection_string = ssh -i <namespace>-key.pem ec2-user@<public IP address> 
 
 Example
   - Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
@@ -104,12 +104,12 @@ Example
 
 Now you can connect to the public EC2 instance using the public connection string, and once you are logged in to that VM, you can connect to the private EC2 instance with the private connection string.
 
-ssh -i ST-TEST-key.pem ec2-user@184.73.105.2
-The authenticity of host '184.73.105.2 (184.73.105.2)' can't be established.
-ECDSA key fingerprint is SHA256:LF/QFykMPWtqp0NLkZQ8JP7/qe8GbTiHE49uMslZWZU.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '184.73.105.2' (ECDSA) to the list of known hosts.
-Last login: Tue Mar 29 15:51:00 2022 from 136.226.53.96
+- ssh -i ST-TEST-key.pem ec2-user@184.73.105.2
+- The authenticity of host '184.73.105.2 (184.73.105.2)' can't be established.
+- ECDSA key fingerprint is SHA256:LF/QFykMPWtqp0NLkZQ8JP7/qe8GbTiHE49uMslZWZU.
+- Are you sure you want to continue connecting (yes/no)? yes
+- Warning: Permanently added '184.73.105.2' (ECDSA) to the list of known hosts.
+- Last login: Tue Mar 29 15:51:00 2022 from 136.226.53.96
 
        __|  __|_  )
        _|  (     /   Amazon Linux 2 AMI
