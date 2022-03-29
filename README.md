@@ -32,26 +32,26 @@ The code is broken into three different modules:
 3) EC2 (deploy a VM in the public subnet, and deploy another VM in a private subnet) 
 
 Module 1 – Networking 
-  What this code will do: 
-    Create a custom VPC 
-    Define VPC name 
-    Create an Internet Gateway and a NAT gateway 
-    Define CIDR blocks 
-    Deploy two public subnets, across two different AZs 
-    Deploy two private subnets, across two different AZs 
-    Create two security groups (one for public, and one for private access) 
+What this code will do: 
+Create a custom VPC 
+Define VPC name 
+Create an Internet Gateway and a NAT gateway 
+Define CIDR blocks 
+Deploy two public subnets, across two different AZs 
+Deploy two private subnets, across two different AZs 
+Create two security groups (one for public, and one for private access) 
 
 Module 2 – SSH–Key 
-  What this code will do: 
-    Dynamically create an SSH Key pair that will be associated with the EC2 instances  
-    This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
+What this code will do: 
+Dynamically create an SSH Key pair that will be associated with the EC2 instances  
+This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
 
 Module 3 – EC2 
-  What this code will do:  
-    Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
-    Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
-    This key will be used for connections to instances in the private subnet 
-    Create a t2.micro AWS Linux VM in the PRIVATE subnet 
+What this code will do:  
+Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
+Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
+This key will be used for connections to instances in the private subnet 
+Create a t2.micro AWS Linux VM in the PRIVATE subnet 
 
 ## Requirements
 Note: In order to follow this demo VPC test you will need to have Terraform installed and configured and access to AWS Account to apply changes and view updates  
@@ -76,11 +76,11 @@ AWS
 ## Terraform Output (example output in tf_output directory)
 
 “terraform init”  
-  This will initialize the working directory that contains a Terraform configuration code with modules and plugins from HashiCorp. 
+This will initialize the working directory that contains a Terraform configuration code with modules and plugins from HashiCorp. 
 
-“terraform plan followed by apply” 
-  This will first show an execution plan and report the resources to be deployed in AWS (23 resources in this example). 
-  Once you confirm by typing “yes,” Terraform will begin provisioning the VPC, EC2 instances, and the SSH-key pair in AWS. 
+“terraform plan followed by apply”
+This will first show an execution plan and report the resources to be deployed in AWS (23 resources in this example). 
+Once you confirm by typing “yes,” Terraform will begin provisioning the VPC, EC2 instances, and the SSH-key pair in AWS. 
 
 “terraform destroy” 
 The “terraform destroy” command is used to destroy the Terraform-managed infrastructure. This will ask for confirmation before destroying. 
@@ -96,7 +96,7 @@ Outputs:
 private_connection_string = ssh -i <namespace>-key.pem ec2-user@<private IP address> 
 public_connection_string = ssh -i <namespace>-key.pem ec2-user@<public IP address> 
 
-- Example
+Example
   Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
   Outputs:
   private_connection_string = ssh -i ST-TEST-key.pem ec2-user@10.0.2.157
