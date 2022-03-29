@@ -31,7 +31,7 @@ The code is broken into three different modules:
 2) SSH-Key (dynamically create an SSH-key pair for connecting to VMs) 
 3) EC2 (deploy a VM in the public subnet, and deploy another VM in a private subnet) 
 
-1) Module 1 – Networking 
+Module 1 – Networking 
   What this code will do: 
     Create a custom VPC 
     Define VPC name 
@@ -41,20 +41,20 @@ The code is broken into three different modules:
     Deploy two private subnets, across two different AZs 
     Create two security groups (one for public, and one for private access) 
 
-2) Module 2 – SSH–Key 
+Module 2 – SSH–Key 
   What this code will do: 
     Dynamically create an SSH Key pair that will be associated with the EC2 instances  
     This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
 
-3) Module 3 – EC2 
+Module 3 – EC2 
   What this code will do:  
     Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
     Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
     This key will be used for connections to instances in the private subnet 
     Create a t2.micro AWS Linux VM in the PRIVATE subnet 
 
-No requirements.
-  Note: In order to follow this demo VPC test you will need to have Terraform installed and configured and access to AWS Account to apply changes and view updates  
+## Requirements
+Note: In order to follow this demo VPC test you will need to have Terraform installed and configured and access to AWS Account to apply changes and view updates  
 
 ## Providers
 AWS
