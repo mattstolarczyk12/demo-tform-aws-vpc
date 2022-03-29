@@ -48,10 +48,10 @@ This SSH Key will be created dynamically, and be deleted along with all the othe
 
 Module 3 – EC2 
 - What this code will do:  
-Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
-Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
-This key will be used for connections to instances in the private subnet 
-Create a t2.micro AWS Linux VM in the PRIVATE subnet 
+- Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
+- Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
+- This key will be used for connections to instances in the private subnet 
+- Create a t2.micro AWS Linux VM in the PRIVATE subnet 
 
 ## Requirements
 Note: In order to follow this demo VPC test you will need to have Terraform installed and configured and access to AWS Account to apply changes and view updates  
