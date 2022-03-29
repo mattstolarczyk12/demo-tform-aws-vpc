@@ -42,12 +42,12 @@ Deploy two private subnets, across two different AZs
 Create two security groups (one for public, and one for private access) 
 
 Module 2 – SSH–Key 
-What this code will do: 
+- What this code will do: 
 Dynamically create an SSH Key pair that will be associated with the EC2 instances  
 This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
 
 Module 3 – EC2 
-What this code will do:  
+- What this code will do:  
 Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
 Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
 This key will be used for connections to instances in the private subnet 
