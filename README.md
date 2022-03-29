@@ -33,18 +33,18 @@ The code is broken into three different modules:
 
 Module 1 – Networking 
 - What this code will do: 
-Create a custom VPC 
-Define VPC name 
-Create an Internet Gateway and a NAT gateway 
-Define CIDR blocks 
-Deploy two public subnets, across two different AZs 
-Deploy two private subnets, across two different AZs 
-Create two security groups (one for public, and one for private access) 
+- Create a custom VPC 
+- Define VPC name 
+- Create an Internet Gateway and a NAT gateway 
+- Define CIDR blocks 
+- Deploy two public subnets, across two different AZs 
+- Deploy two private subnets, across two different AZs 
+- Create two security groups (one for public, and one for private access) 
 
 Module 2 – SSH–Key 
 - What this code will do: 
-Dynamically create an SSH Key pair that will be associated with the EC2 instances  
-This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
+- Dynamically create an SSH Key pair that will be associated with the EC2 instances  
+- This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
 
 Module 3 – EC2 
 - What this code will do:  
@@ -97,7 +97,7 @@ private_connection_string = ssh -i <namespace>-key.pem ec2-user@<private IP addr
 public_connection_string = ssh -i <namespace>-key.pem ec2-user@<public IP address> 
 
 Example
-  Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
+  - Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
   Outputs:
   private_connection_string = ssh -i ST-TEST-key.pem ec2-user@10.0.2.157
   public_connection_string = ssh -i ST-TEST-key.pem ec2-user@184.73.105.2
