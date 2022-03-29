@@ -1,0 +1,693 @@
+[0m[1mmodule.ssh-key.tls_private_key.key: Refreshing state... [id=7c360daa1ba617c1e319c13ab3fe15ec025e6a06][0m
+[0m[1mmodule.ssh-key.local_file.private_key: Refreshing state... [id=b6a308638c83b8ede2cb766a920a192bab876636][0m
+[0m[1mmodule.networking.data.aws_availability_zones.available: Refreshing state... [id=us-east-1][0m
+[0m[1mmodule.ec2.data.aws_ami.amazon-linux-2: Refreshing state... [id=ami-03e0b06f01d45a4eb][0m
+[0m[1mmodule.ssh-key.aws_key_pair.key_pair: Refreshing state... [id=ST-TEST-key][0m
+[0m[1mmodule.networking.module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0afa87635ed0cc6cf][0m
+[0m[1mmodule.networking.module.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-0a3680b6b9b456036][0m
+[0m[1mmodule.networking.module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-0a6ecddca1ec17cbf][0m
+[0m[1mmodule.networking.aws_security_group.allow_ssh_pub: Refreshing state... [id=sg-06c71d76fcebf44bd][0m
+[0m[1mmodule.networking.module.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-0c0e64be49a79e67c][0m
+[0m[1mmodule.networking.aws_security_group.allow_ssh_priv: Refreshing state... [id=sg-07c7e25c74dfeaa8f][0m
+[0m[1mmodule.networking.module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0b39214b703032e16][0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-08c99afade45e7730][0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-00062f983840992e4][0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0d05f3d7f41da8b89][0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-0060d9e1f3b8309f8][0m
+[0m[1mmodule.networking.module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-0a6ecddca1ec17cbf1080289494][0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0aeb7e339d1e7c604][0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0d1f7762a324486cf][0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-0419b846fa3c4e9cc][0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0fdaf9e18ef9c82e8][0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-081a0cc11667247e0][0m
+[0m[1mmodule.networking.module.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-0c0e64be49a79e67c1080289494][0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Refreshing state... [id=i-0e398000a244f06f4][0m
+[0m[1mmodule.ec2.aws_instance.ec2_private: Refreshing state... [id=i-07b9ee3a426b81099][0m
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [31m-[0m destroy
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.ec2.aws_instance.ec2_private[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_instance" "ec2_private" {
+      [31m-[0m [0m[1m[0mami[0m[0m                                  = "ami-03e0b06f01d45a4eb" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn[0m[0m                                  = "arn:aws:ec2:us-east-1:992214388808:instance/i-07b9ee3a426b81099" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massociate_public_ip_address[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                    = "us-east-1b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_core_count[0m[0m                       = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_termination[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mebs_optimized[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mget_password_data[0m[0m                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mhibernation[0m[0m                          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                   = "i-07b9ee3a426b81099" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = "stop" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_state[0m[0m                       = "running" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_type[0m[0m                        = "t2.micro" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_address_count[0m[0m                   = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_addresses[0m[0m                       = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_name[0m[0m                             = "ST-TEST-key" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmonitoring[0m[0m                           = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = "eni-07247a68b6b9d3644" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns[0m[0m                          = "ip-10-0-2-57.ec2.internal" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m                           = "10.0.2.57" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecondary_private_ips[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecurity_groups[0m[0m                      = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msource_dest_check[0m[0m                    = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m                            = "subnet-00062f983840992e4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                 = {
+          [31m-[0m [0m"Name" = "ST-TEST-EC2-PRIVATE"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [31m-[0m [0m"Name" = "ST-TEST-EC2-PRIVATE"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtenancy[0m[0m                              = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0muser_data_replace_on_change[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = [
+          [31m-[0m [0m"sg-07c7e25c74dfeaa8f",
+        ] [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mcapacity_reservation_specification {
+          [31m-[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = "open" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mcredit_specification {
+          [31m-[0m [0m[1m[0mcpu_credits[0m[0m = "standard" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0menclave_options {
+          [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmetadata_options {
+          [31m-[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_tokens[0m[0m                 = "optional" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mroot_block_device {
+          [31m-[0m [0m[1m[0mdelete_on_termination[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mdevice_name[0m[0m           = "/dev/xvda" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mencrypted[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0miops[0m[0m                  = 100 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtags[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mthroughput[0m[0m            = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_id[0m[0m             = "vol-07166f5abc0b9b6fd" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_size[0m[0m           = 8 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_type[0m[0m           = "gp2" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.ec2.aws_instance.ec2_public[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_instance" "ec2_public" {
+      [31m-[0m [0m[1m[0mami[0m[0m                                  = "ami-03e0b06f01d45a4eb" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn[0m[0m                                  = "arn:aws:ec2:us-east-1:992214388808:instance/i-0e398000a244f06f4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massociate_public_ip_address[0m[0m          = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                    = "us-east-1a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_core_count[0m[0m                       = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_termination[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mebs_optimized[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mget_password_data[0m[0m                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mhibernation[0m[0m                          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                   = "i-0e398000a244f06f4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = "stop" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_state[0m[0m                       = "running" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_type[0m[0m                        = "t2.micro" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_address_count[0m[0m                   = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_addresses[0m[0m                       = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_name[0m[0m                             = "ST-TEST-key" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmonitoring[0m[0m                           = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = "eni-03db90b3db6895b3e" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns[0m[0m                          = "ip-10-0-101-29.ec2.internal" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m                           = "10.0.101.29" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m                            = "52.206.130.18" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecondary_private_ips[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecurity_groups[0m[0m                      = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msource_dest_check[0m[0m                    = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m                            = "subnet-08c99afade45e7730" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                 = {
+          [31m-[0m [0m"Name" = "ST-TEST-EC2-PUBLIC"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [31m-[0m [0m"Name" = "ST-TEST-EC2-PUBLIC"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtenancy[0m[0m                              = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0muser_data_replace_on_change[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = [
+          [31m-[0m [0m"sg-06c71d76fcebf44bd",
+        ] [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mcapacity_reservation_specification {
+          [31m-[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = "open" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mcredit_specification {
+          [31m-[0m [0m[1m[0mcpu_credits[0m[0m = "standard" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0menclave_options {
+          [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmetadata_options {
+          [31m-[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_tokens[0m[0m                 = "optional" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mroot_block_device {
+          [31m-[0m [0m[1m[0mdelete_on_termination[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mdevice_name[0m[0m           = "/dev/xvda" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mencrypted[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0miops[0m[0m                  = 100 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtags[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mthroughput[0m[0m            = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_id[0m[0m             = "vol-0c52e87250f5784cf" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_size[0m[0m           = 8 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_type[0m[0m           = "gp2" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.networking.aws_security_group.allow_ssh_priv[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "allow_ssh_priv" {
+      [31m-[0m [0m[1m[0marn[0m[0m                    = "arn:aws:ec2:us-east-1:992214388808:security-group/sg-07c7e25c74dfeaa8f" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdescription[0m[0m            = "Allow SSH inbound traffic" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0megress[0m[0m                 = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = ""
+              [31m-[0m [0mfrom_port        = 0
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "-1"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 0
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-07c7e25c74dfeaa8f" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mingress[0m[0m                = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"10.0.0.0/16",
+                ]
+              [31m-[0m [0mdescription      = "SSH only from internal VPC clients"
+              [31m-[0m [0mfrom_port        = 22
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "tcp"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 22
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                   = "ST-TEST-allow_ssh_priv" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m               = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                   = {
+          [31m-[0m [0m"Name" = "ST-TEST-allow_ssh_priv"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m               = {
+          [31m-[0m [0m"Name" = "ST-TEST-allow_ssh_priv"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.aws_security_group.allow_ssh_pub[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "allow_ssh_pub" {
+      [31m-[0m [0m[1m[0marn[0m[0m                    = "arn:aws:ec2:us-east-1:992214388808:security-group/sg-06c71d76fcebf44bd" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdescription[0m[0m            = "Allow SSH inbound traffic" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0megress[0m[0m                 = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = ""
+              [31m-[0m [0mfrom_port        = 0
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "-1"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 0
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-06c71d76fcebf44bd" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mingress[0m[0m                = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = "SSH from the internet"
+              [31m-[0m [0mfrom_port        = 22
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "tcp"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 22
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                   = "ST-TEST-allow_ssh" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m               = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                   = {
+          [31m-[0m [0m"Name" = "ST-TEST-allow_ssh_pub"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m               = {
+          [31m-[0m [0m"Name" = "ST-TEST-allow_ssh_pub"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.ssh-key.aws_key_pair.key_pair[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_key_pair" "key_pair" {
+      [31m-[0m [0m[1m[0marn[0m[0m         = "arn:aws:ec2:us-east-1:992214388808:key-pair/ST-TEST-key" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mfingerprint[0m[0m = "ac:28:ff:02:89:c1:8e:b6:21:19:32:50:25:49:eb:79" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m          = "ST-TEST-key" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_name[0m[0m    = "ST-TEST-key" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_pair_id[0m[0m = "key-07843824c6bc7bc25" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_key[0m[0m  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeEEmJME7COATXAbyfbtygs1IDpKFy9fEYNoR3bUqcT3vYcuRJfpx8YLNClgWJjSvQdOpDvrn5hhcQny70m2mORajWGCwXx8m300JnSJESSKim8OX1aE//aNzynJt31tjQvmrrvO4w0YTasAPlJu7SnfQTVyLTXnL+pDaOFs2UpC5NGnPMF2gnhDbFEVLnRtYdYVvD6RHM16S614GPwiTO075eR0OPxQKkiyak+d38OEesySWqHq+We0GqGvyEYwTdLbsSQES+wdeHLVCHasODOd+4pF1/m/pmca5mQnV5ZWEE/9dEdKhBCyo6iSGIR/fhCUVbi29Z3xMAar6XYmor" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m        = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m    = {} [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.ssh-key.local_file.private_key[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "local_file" "private_key" {
+      [31m-[0m [0m[1m[0mdirectory_permission[0m[0m = "0777" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mfile_permission[0m[0m      = "0400" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mfilename[0m[0m             = "ST-TEST-key.pem" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                   = "b6a308638c83b8ede2cb766a920a192bab876636" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msensitive_content[0m[0m    = (sensitive value)
+    }
+
+[1m  # module.ssh-key.tls_private_key.key[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "tls_private_key" "key" {
+      [31m-[0m [0m[1m[0malgorithm[0m[0m                  = "RSA" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mecdsa_curve[0m[0m                = "P224" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                         = "7c360daa1ba617c1e319c13ab3fe15ec025e6a06" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_key_pem[0m[0m            = (sensitive value)
+      [31m-[0m [0m[1m[0mpublic_key_fingerprint_md5[0m[0m = "9d:a1:b3:ee:36:90:1a:c1:39:0c:38:f0:0a:e4:1f:65" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_key_openssh[0m[0m         = <<~EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeEEmJME7COATXAbyfbtygs1IDpKFy9fEYNoR3bUqcT3vYcuRJfpx8YLNClgWJjSvQdOpDvrn5hhcQny70m2mORajWGCwXx8m300JnSJESSKim8OX1aE//aNzynJt31tjQvmrrvO4w0YTasAPlJu7SnfQTVyLTXnL+pDaOFs2UpC5NGnPMF2gnhDbFEVLnRtYdYVvD6RHM16S614GPwiTO075eR0OPxQKkiyak+d38OEesySWqHq+We0GqGvyEYwTdLbsSQES+wdeHLVCHasODOd+4pF1/m/pmca5mQnV5ZWEE/9dEdKhBCyo6iSGIR/fhCUVbi29Z3xMAar6XYmor
+        EOT [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_key_pem[0m[0m             = <<~EOT
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3hBJiTBOwjgE1wG8n27c
+            oLNSA6ShcvXxGDaEd21KnE972HLkSX6cfGCzQpYFiY0r0HTqQ765+YYXEJ8u9Jtp
+            jkWo1hgsF8fJt9NCZ0iREkiopvDl9WhP/2jc8pybd9bY0L5q67zuMNGE2rAD5Sbu
+            0p30E1ci015y/qQ2jhbNlKQuTRpzzBdoJ4Q2xRFS50bWHWFbw+kRzNekuteBj8Ik
+            ztO+XkdDj8UCpIsmpPnd/DhHrMklqh6vlntBqhr8hGME3S27EkBEvsHXhy1Qh2rD
+            gznfuKRdf5v6ZnGuZkJ1eWVhBP/XRHSoQQsqOokhiEf34QlFW4tvWd8TAGq+l2Jq
+            KwIDAQAB
+            -----END PUBLIC KEY-----
+        EOT [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrsa_bits[0m[0m                   = 2048 [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_eip.nat[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_eip" "nat" {
+      [31m-[0m [0m[1m[0mallocation_id[0m[0m        = "eipalloc-0a3680b6b9b456036" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-016c213c87c88b910" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdomain[0m[0m               = "vpc" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                   = "eipalloc-0a3680b6b9b456036" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mnetwork_border_group[0m[0m = "us-east-1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0e67095646de7c21a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-10-0-101-131.ec2.internal" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m           = "10.0.101.131" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_dns[0m[0m           = "ec2-18-235-188-167.compute-1.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m            = "18.235.188.167" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ipv4_pool[0m[0m     = "amazon" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                 = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m             = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc[0m[0m                  = true [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_internet_gateway.this[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_internet_gateway" "this" {
+      [31m-[0m [0m[1m[0marn[0m[0m      = "arn:aws:ec2:us-east-1:992214388808:internet-gateway/igw-0b39214b703032e16" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m       = "igw-0b39214b703032e16" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m     = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m   = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_nat_gateway.this[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_nat_gateway" "this" {
+      [31m-[0m [0m[1m[0mallocation_id[0m[0m        = "eipalloc-0a3680b6b9b456036" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mconnectivity_type[0m[0m    = "public" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                   = "nat-0419b846fa3c4e9cc" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mnetwork_interface_id[0m[0m = "eni-0e67095646de7c21a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m           = "10.0.101.131" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m            = "18.235.188.167" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m            = "subnet-08c99afade45e7730" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                 = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m             = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_route.private_nat_gateway[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route" "private_nat_gateway" {
+      [31m-[0m [0m[1m[0mdestination_cidr_block[0m[0m = "0.0.0.0/0" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "r-rtb-0c0e64be49a79e67c1080289494" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mnat_gateway_id[0m[0m         = "nat-0419b846fa3c4e9cc" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0morigin[0m[0m                 = "CreateRoute" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute_table_id[0m[0m         = "rtb-0c0e64be49a79e67c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mstate[0m[0m                  = "active" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mtimeouts {
+          [31m-[0m [0m[1m[0mcreate[0m[0m = "5m" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.networking.module.vpc.aws_route.public_internet_gateway[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route" "public_internet_gateway" {
+      [31m-[0m [0m[1m[0mdestination_cidr_block[0m[0m = "0.0.0.0/0" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mgateway_id[0m[0m             = "igw-0b39214b703032e16" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "r-rtb-0a6ecddca1ec17cbf1080289494" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0morigin[0m[0m                 = "CreateRoute" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute_table_id[0m[0m         = "rtb-0a6ecddca1ec17cbf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mstate[0m[0m                  = "active" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mtimeouts {
+          [31m-[0m [0m[1m[0mcreate[0m[0m = "5m" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.networking.module.vpc.aws_route_table.private[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "private" {
+      [31m-[0m [0m[1m[0marn[0m[0m              = "arn:aws:ec2:us-east-1:992214388808:route-table/rtb-0c0e64be49a79e67c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m               = "rtb-0c0e64be49a79e67c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m         = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpropagating_vgws[0m[0m = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0419b846fa3c4e9cc"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m             = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-private"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m         = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-private"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m           = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_route_table.public[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "public" {
+      [31m-[0m [0m[1m[0marn[0m[0m              = "arn:aws:ec2:us-east-1:992214388808:route-table/rtb-0a6ecddca1ec17cbf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m               = "rtb-0a6ecddca1ec17cbf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m         = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpropagating_vgws[0m[0m = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = "igw-0b39214b703032e16"
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = ""
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m             = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-public"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m         = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-public"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m           = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_route_table_association.private[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "private" {
+      [31m-[0m [0m[1m[0mid[0m[0m             = "rtbassoc-081a0cc11667247e0" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute_table_id[0m[0m = "rtb-0c0e64be49a79e67c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m      = "subnet-0060d9e1f3b8309f8" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_route_table_association.private[1][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "private" {
+      [31m-[0m [0m[1m[0mid[0m[0m             = "rtbassoc-0fdaf9e18ef9c82e8" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute_table_id[0m[0m = "rtb-0c0e64be49a79e67c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m      = "subnet-00062f983840992e4" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_route_table_association.public[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "public" {
+      [31m-[0m [0m[1m[0mid[0m[0m             = "rtbassoc-0d1f7762a324486cf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute_table_id[0m[0m = "rtb-0a6ecddca1ec17cbf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m      = "subnet-08c99afade45e7730" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_route_table_association.public[1][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "public" {
+      [31m-[0m [0m[1m[0mid[0m[0m             = "rtbassoc-0aeb7e339d1e7c604" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mroute_table_id[0m[0m = "rtb-0a6ecddca1ec17cbf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m      = "subnet-0d05f3d7f41da8b89" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_subnet.private[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "private" {
+      [31m-[0m [0m[1m[0marn[0m[0m                                            = "arn:aws:ec2:us-east-1:992214388808:subnet/subnet-0060d9e1f3b8309f8" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                              = "us-east-1a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone_id[0m[0m                           = "use1-az6" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.1.0/24" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns64[0m[0m                                   = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                             = "subnet-0060d9e1f3b8309f8" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_native[0m[0m                                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_customer_owned_ip_on_launch[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                                       = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                           = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-private-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-private-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                                         = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_subnet.private[1][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "private" {
+      [31m-[0m [0m[1m[0marn[0m[0m                                            = "arn:aws:ec2:us-east-1:992214388808:subnet/subnet-00062f983840992e4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                              = "us-east-1b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone_id[0m[0m                           = "use1-az1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.2.0/24" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns64[0m[0m                                   = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                             = "subnet-00062f983840992e4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_native[0m[0m                                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_customer_owned_ip_on_launch[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                                       = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                           = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-private-us-east-1b"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-private-us-east-1b"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                                         = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_subnet.public[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "public" {
+      [31m-[0m [0m[1m[0marn[0m[0m                                            = "arn:aws:ec2:us-east-1:992214388808:subnet/subnet-08c99afade45e7730" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                              = "us-east-1a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone_id[0m[0m                           = "use1-az6" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.101.0/24" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns64[0m[0m                                   = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                             = "subnet-08c99afade45e7730" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_native[0m[0m                                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_customer_owned_ip_on_launch[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                                       = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                           = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-public-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-public-us-east-1a"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                                         = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_subnet.public[1][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "public" {
+      [31m-[0m [0m[1m[0marn[0m[0m                                            = "arn:aws:ec2:us-east-1:992214388808:subnet/subnet-0d05f3d7f41da8b89" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                              = "us-east-1b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone_id[0m[0m                           = "use1-az1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.102.0/24" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns64[0m[0m                                   = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                             = "subnet-0d05f3d7f41da8b89" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_native[0m[0m                                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_customer_owned_ip_on_launch[0m[0m                = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                                       = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                           = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-public-us-east-1b"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc-public-us-east-1b"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                                         = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.networking.module.vpc.aws_vpc.this[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_vpc" "this" {
+      [31m-[0m [0m[1m[0marn[0m[0m                              = "arn:aws:ec2:us-east-1:992214388808:vpc/vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_generated_ipv6_cidr_block[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                       = "10.0.0.0/16" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdefault_network_acl_id[0m[0m           = "acl-092511d377fdcd23c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdefault_route_table_id[0m[0m           = "rtb-0238412e6ec06a160" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdefault_security_group_id[0m[0m        = "sg-05fd2491c781733b1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdhcp_options_id[0m[0m                  = "dopt-d5b942b0" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_classiclink[0m[0m               = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_classiclink_dns_support[0m[0m   = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns_hostnames[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns_support[0m[0m               = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                               = "vpc-0afa87635ed0cc6cf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_tenancy[0m[0m                 = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_netmask_length[0m[0m              = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmain_route_table_id[0m[0m              = "rtb-0238412e6ec06a160" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                         = "992214388808" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                             = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                         = {
+          [31m-[0m [0m"Name" = "ST-TEST-vpc"
+        } [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 0 to change, 23 to destroy.[0m
+[0m
+[1mChanges to Outputs:[0m
+  [31m-[0m [0m[1m[0mprivate_connection_string[0m[0m = "ssh -i ST-TEST-key.pem ec2-user@10.0.2.57" [90m->[0m [0m[90mnull[0m[0m
+  [31m-[0m [0m[1m[0mpublic_connection_string[0m[0m  = "ssh -i ST-TEST-key.pem ec2-user@52.206.130.18" [90m->[0m [0m[90mnull[0m[0m[0m
+
+[33m
+[1m[33mWarning: [0m[0m[1mArgument is deprecated[0m
+
+[0m  on modules/ssh-key/main.tf line 11, in resource "local_file" "private_key":
+  11:   sensitive_content = [4mtls_private_key.key.private_key_pem[0m
+[0m
+Use the `local_sensitive_file` resource instead.
+[0m[0m
+[0m[1mDo you really want to destroy all resources?[0m
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  [1mEnter a value:[0m [0m
+[0m[1mmodule.ssh-key.local_file.private_key: Destroying... [id=b6a308638c83b8ede2cb766a920a192bab876636][0m[0m
+[0m[1mmodule.ssh-key.local_file.private_key: Destruction complete after 0s[0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_private: Destroying... [id=i-07b9ee3a426b81099][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Destroying... [id=i-0e398000a244f06f4][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Still destroying... [id=i-0e398000a244f06f4, 10s elapsed][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_private: Still destroying... [id=i-07b9ee3a426b81099, 10s elapsed][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_private: Still destroying... [id=i-07b9ee3a426b81099, 20s elapsed][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Still destroying... [id=i-0e398000a244f06f4, 20s elapsed][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_private: Destruction complete after 30s[0m[0m
+[0m[1mmodule.networking.aws_security_group.allow_ssh_priv: Destroying... [id=sg-07c7e25c74dfeaa8f][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Still destroying... [id=i-0e398000a244f06f4, 30s elapsed][0m[0m
+[0m[1mmodule.networking.aws_security_group.allow_ssh_priv: Destruction complete after 1s[0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Still destroying... [id=i-0e398000a244f06f4, 40s elapsed][0m[0m
+[0m[1mmodule.ec2.aws_instance.ec2_public: Destruction complete after 41s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.public[0]: Destroying... [id=rtbassoc-0d1f7762a324486cf][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route.public_internet_gateway[0]: Destroying... [id=r-rtb-0a6ecddca1ec17cbf1080289494][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.public[1]: Destroying... [id=rtbassoc-0aeb7e339d1e7c604][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.private[0]: Destroying... [id=rtbassoc-081a0cc11667247e0][0m[0m
+[0m[1mmodule.ssh-key.aws_key_pair.key_pair: Destroying... [id=ST-TEST-key][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.private[1]: Destroying... [id=rtbassoc-0fdaf9e18ef9c82e8][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route.private_nat_gateway[0]: Destroying... [id=r-rtb-0c0e64be49a79e67c1080289494][0m[0m
+[0m[1mmodule.networking.aws_security_group.allow_ssh_pub: Destroying... [id=sg-06c71d76fcebf44bd][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.private[0]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.ssh-key.aws_key_pair.key_pair: Destruction complete after 0s[0m[0m
+[0m[1mmodule.ssh-key.tls_private_key.key: Destroying... [id=7c360daa1ba617c1e319c13ab3fe15ec025e6a06][0m[0m
+[0m[1mmodule.ssh-key.tls_private_key.key: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.public[0]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.public[1]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route.public_internet_gateway[0]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table.public[0]: Destroying... [id=rtb-0a6ecddca1ec17cbf][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route.private_nat_gateway[0]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Destroying... [id=nat-0419b846fa3c4e9cc][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table_association.private[1]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.private[1]: Destroying... [id=subnet-00062f983840992e4][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table.private[0]: Destroying... [id=rtb-0c0e64be49a79e67c][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.private[0]: Destroying... [id=subnet-0060d9e1f3b8309f8][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table.public[0]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.aws_security_group.allow_ssh_pub: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_route_table.private[0]: Destruction complete after 0s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.private[1]: Destruction complete after 1s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.private[0]: Destruction complete after 1s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 10s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 20s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 30s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 40s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 50s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 1m0s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Still destroying... [id=nat-0419b846fa3c4e9cc, 1m10s elapsed][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_nat_gateway.this[0]: Destruction complete after 1m11s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_eip.nat[0]: Destroying... [id=eipalloc-0a3680b6b9b456036][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.public[0]: Destroying... [id=subnet-08c99afade45e7730][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_internet_gateway.this[0]: Destroying... [id=igw-0b39214b703032e16][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.public[1]: Destroying... [id=subnet-0d05f3d7f41da8b89][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_internet_gateway.this[0]: Destruction complete after 1s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.public[0]: Destruction complete after 1s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_eip.nat[0]: Destruction complete after 1s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_subnet.public[1]: Destruction complete after 1s[0m[0m
+[0m[1mmodule.networking.module.vpc.aws_vpc.this[0]: Destroying... [id=vpc-0afa87635ed0cc6cf][0m[0m
+[0m[1mmodule.networking.module.vpc.aws_vpc.this[0]: Destruction complete after 1s[0m[0m
+[0m[1m[32m
+Destroy complete! Resources: 23 destroyed.[0m
