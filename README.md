@@ -76,16 +76,16 @@ AWS
 ## Terraform Output (example output in tf_output directory)
 
 “terraform init”  
-This will initialize the working directory that contains a Terraform configuration code with modules and plugins from HashiCorp. 
+- This will initialize the working directory that contains a Terraform configuration code with modules and plugins from HashiCorp. 
 
 “terraform plan followed by apply”
-This will first show an execution plan and report the resources to be deployed in AWS (23 resources in this example). 
-Once you confirm by typing “yes,” Terraform will begin provisioning the VPC, EC2 instances, and the SSH-key pair in AWS. 
+- This will first show an execution plan and report the resources to be deployed in AWS (23 resources in this example). 
+- Once you confirm by typing “yes,” Terraform will begin provisioning the VPC, EC2 instances, and the SSH-key pair in AWS. 
 
 “terraform destroy” 
-The “terraform destroy” command is used to destroy the Terraform-managed infrastructure. This will ask for confirmation before destroying. 
-Once you confirm by typing “yes,” Terraform will delete all of the 23 AWS resources it created earlier. 
-(Note: This will only destroy resources provisioned from the current project, nothing else.) 
+- The “terraform destroy” command is used to destroy the Terraform-managed infrastructure. This will ask for confirmation before destroying. 
+- Once you confirm by typing “yes,” Terraform will delete all of the 23 AWS resources it created earlier. 
+- (Note: This will only destroy resources provisioned from the current project, nothing else.) 
 
 ## Resources
 Once Terraform has completed provisioning resources, it will output a string you can copy and paste to the command line in order connect to your EC2 instances. 
@@ -93,14 +93,14 @@ I defined this to be the output code as a convenience.
 
 Outputs: 
 
-private_connection_string = ssh -i <namespace>-key.pem ec2-user@<private IP address> 
-public_connection_string = ssh -i <namespace>-key.pem ec2-user@<public IP address> 
+- private_connection_string = ssh -i <namespace>-key.pem ec2-user@<private IP address> 
+  public_connection_string = ssh -i <namespace>-key.pem ec2-user@<public IP address> 
 
 Example
   - Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
-  Outputs:
-  private_connection_string = ssh -i ST-TEST-key.pem ec2-user@10.0.2.157
-  public_connection_string = ssh -i ST-TEST-key.pem ec2-user@184.73.105.2
+  - Outputs:
+  - private_connection_string = ssh -i ST-TEST-key.pem ec2-user@10.0.2.157
+  - public_connection_string = ssh -i ST-TEST-key.pem ec2-user@184.73.105.2
 
 Now you can connect to the public EC2 instance using the public connection string, and once you are logged in to that VM, you can connect to the private EC2 instance with the private connection string.
 
