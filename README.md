@@ -20,44 +20,44 @@ Both security groups are dynamically created in the network module.
 ## High level diagram
 
 ![Diagram](img/demo-tform-aws-vpc.png)
-- WIN Snip-It capture of img/demo-tform-aws-vpc.drawio diagram
+This is a Snipping Tool capture of img/demo-tform-aws-vpc.drawio diagram
 
 ## Current state
 
 Modules:
 
 The code is broken into three different modules: 
-- Networking (define the VPC and all of its components) 
-- SSH-Key (dynamically create an SSH-key pair for connecting to VMs) 
-- EC2 (deploy a VM in the public subnet, and deploy another VM in a private subnet) 
+1) Networking (define the VPC and all of its components) 
+2) SSH-Key (dynamically create an SSH-key pair for connecting to VMs) 
+3) EC2 (deploy a VM in the public subnet, and deploy another VM in a private subnet) 
 
--  Module 1 – Networking 
--    What this code will do: 
--      Create a custom VPC 
--      Define VPC name 
--      Create an Internet Gateway and a NAT gateway 
--      Define CIDR blocks 
--      Deploy two public subnets, across two different AZs 
--      Deploy two private subnets, across two different AZs 
--      Create two security groups (one for public, and one for private access) 
+1) Module 1 – Networking 
+  What this code will do: 
+    Create a custom VPC 
+    Define VPC name 
+    Create an Internet Gateway and a NAT gateway 
+    Define CIDR blocks 
+    Deploy two public subnets, across two different AZs 
+    Deploy two private subnets, across two different AZs 
+    Create two security groups (one for public, and one for private access) 
 
--  Module 2 – SSH–Key 
--    What this code will do: 
--      Dynamically create an SSH Key pair that will be associated with the EC2 instances  
--      This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
+2) Module 2 – SSH–Key 
+  What this code will do: 
+    Dynamically create an SSH Key pair that will be associated with the EC2 instances  
+    This SSH Key will be created dynamically, and be deleted along with all the other resources provisioned with Terraform. 
 
--  Module 3 – EC2 
--     What this code will do:  
--      Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
--      Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
--      This key will be used for connections to instances in the private subnet 
--      Create a t2.micro AWS Linux VM in the PRIVATE subnet 
+3) Module 3 – EC2 
+  What this code will do:  
+    Create a t2.micro AWS Linux VM in the PUBLIC subnet for use as a bastion/gateway host. 
+    Terraform will copy the SSH Key from your local system to the VM and apply appropriate file permissions to it. 
+    This key will be used for connections to instances in the private subnet 
+    Create a t2.micro AWS Linux VM in the PRIVATE subnet 
 
 No requirements.
--  Note: In order to follow this demo VPC test you will need to have Terraform installed and configured and access to AWS Account to apply changes and view updates  
+  Note: In order to follow this demo VPC test you will need to have Terraform installed and configured and access to AWS Account to apply changes and view updates  
 
 ## Providers
--  AWS
+AWS
 
 ## Inputs
 
@@ -76,14 +76,16 @@ No requirements.
 ## Terraform Output (example output in tf_output directory)
 
 “terraform init”  
--    This will initialize the working directory that contains a Terraform configuration code with modules and plugins from HashiCorp. 
+  This will initialize the working directory that contains a Terraform configuration code with modules and plugins from HashiCorp. 
+
 “terraform plan followed by apply” 
--    This will first show an execution plan and report the resources to be deployed in AWS (23 resources in this example). 
--    Once you confirm by typing “yes,” Terraform will begin provisioning the VPC, EC2 instances, and the SSH-key pair in AWS. 
+  This will first show an execution plan and report the resources to be deployed in AWS (23 resources in this example). 
+  Once you confirm by typing “yes,” Terraform will begin provisioning the VPC, EC2 instances, and the SSH-key pair in AWS. 
+
 “terraform destroy” 
--   The “terraform destroy” command is used to destroy the Terraform-managed infrastructure. This will ask for confirmation before destroying. 
--   Once you confirm by typing “yes,” Terraform will delete all of the 23 AWS resources it created earlier. 
--   (Note: This will only destroy resources provisioned from the current project, nothing else.) 
+The “terraform destroy” command is used to destroy the Terraform-managed infrastructure. This will ask for confirmation before destroying. 
+Once you confirm by typing “yes,” Terraform will delete all of the 23 AWS resources it created earlier. 
+(Note: This will only destroy resources provisioned from the current project, nothing else.) 
 
 ## Resources
 Once Terraform has completed provisioning resources, it will output a string you can copy and paste to the command line in order connect to your EC2 instances. 
