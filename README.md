@@ -32,7 +32,7 @@ The code is broken into three different modules:
 3) EC2 (deploy a VM in the public subnet, and deploy another VM in a private subnet) 
 
 Module 1 – Networking 
-What this code will do: 
+- What this code will do: 
 Create a custom VPC 
 Define VPC name 
 Create an Internet Gateway and a NAT gateway 
